@@ -23,20 +23,20 @@
     <meta name="description" content="这是本蒟蒻的第一篇题解，支持一下吧 qwq。 首先，理解题意，已经写得很清楚了，简单来说就是从一个数列中，去掉几个数，得到一个新数列，并使数列中的极差 M 加上两个最接近的数的差 m（另一种形式的极差）。 考虑做法，发现数列的顺序对于答案没有影响，可以进行排序，肯定更方便计算对吧。 此时考虑选取数列，假设已经选取了一个数，怎样选取下一个数呢？在排序后的数列中，不难想到，选这个数的左边一个或">
 <meta property="og:type" content="article">
 <meta property="og:title" content="洛谷P13416题解">
-<meta property="og:url" content="http://example.com/2026/07/25/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:url" content="http://example.com/2026/01/11/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Welcom Here!">
 <meta property="og:description" content="这是本蒟蒻的第一篇题解，支持一下吧 qwq。 首先，理解题意，已经写得很清楚了，简单来说就是从一个数列中，去掉几个数，得到一个新数列，并使数列中的极差 M 加上两个最接近的数的差 m（另一种形式的极差）。 考虑做法，发现数列的顺序对于答案没有影响，可以进行排序，肯定更方便计算对吧。 此时考虑选取数列，假设已经选取了一个数，怎样选取下一个数呢？在排序后的数列中，不难想到，选这个数的左边一个或">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-07-25T09:32:49.907Z">
-<meta property="article:modified_time" content="2026-07-25T09:43:03.680Z">
+<meta property="article:published_time" content="2026-01-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-25T23:45:27.835Z">
 <meta property="article:author" content="CwO_By">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2026/07/25/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/">
+<link rel="canonical" href="http://example.com/2026/01/11/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/">
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/07/25/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/","path":"2026/07/25/洛谷P13416题解/","title":"洛谷P13416题解"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/01/11/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/","path":"2026/01/11/洛谷P13416题解/","title":"洛谷P13416题解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>洛谷P13416题解 | Welcom Here!</title>
@@ -128,7 +128,7 @@
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="CwO_By"
-      src="https://avatars.githubusercontent.com/u/246614064">
+      src="/img/avatar.png">
   <p class="site-author-name" itemprop="name">CwO_By</p>
   <div class="site-description" itemprop="description">这篇博客用于记录我的算法学习经历与心得，希望能坚持下去</div>
 </div>
@@ -136,12 +136,12 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
       </div>
   </nav>
@@ -168,10 +168,10 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2026/07/25/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/01/11/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://avatars.githubusercontent.com/u/246614064">
+      <meta itemprop="image" content="/img/avatar.png">
       <meta itemprop="name" content="CwO_By">
     </span>
 
@@ -196,9 +196,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2026-07-25 17:32:49 / 修改时间：17:43:03" itemprop="dateCreated datePublished" datetime="2026-07-25T17:32:49+08:00">2026-07-25</time>
+      <time title="创建时间：2026-01-11 00:00:00" itemprop="dateCreated datePublished" datetime="2026-01-11T00:00:00+08:00">2026-01-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2026-07-26 07:45:27" itemprop="dateModified" datetime="2026-07-26T07:45:27+08:00">2026-07-26</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -261,6 +267,15 @@ class="math inline"><em>O</em>(<em>n</em>log <em>n</em>)</span>，单调队列
 
         
 
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2026/07/26/%E7%AC%AC%E5%9B%9B%E6%AC%A1NOIP%E8%AE%AD%E7%BB%83%E6%80%BB%E7%BB%93/" rel="next" title="第四次NOIP训练总结">
+                  第四次NOIP训练总结 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
     </footer>
   </article>
 </div>
