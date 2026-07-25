@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>洛谷P13416题解 | Welcom Here!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="这是本蒟蒻的第一篇题解，支持一下吧 qwq。 首先，理解题意，已经写得很清楚了，简单来说就是从一个数列中，去掉几个数，得到一个新数列，并使数列中的极差 $M$ 加上两个最接近的数的差 $m$（另一种形式的极差）。 考虑做法，发现数列的顺序对于答案没有影响，可以进行排序，肯定更方便计算对吧。 此时考虑选取数列，假设已经选取了一个数，怎样选取下一个数呢？在排序后的数列中，不难想到，选这个数的左边一个或">
+<meta property="og:type" content="article">
+<meta property="og:title" content="洛谷P13416题解">
+<meta property="og:url" content="http://example.com/2026/07/25/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/index.html">
+<meta property="og:site_name" content="Welcom Here!">
+<meta property="og:description" content="这是本蒟蒻的第一篇题解，支持一下吧 qwq。 首先，理解题意，已经写得很清楚了，简单来说就是从一个数列中，去掉几个数，得到一个新数列，并使数列中的极差 $M$ 加上两个最接近的数的差 $m$（另一种形式的极差）。 考虑做法，发现数列的顺序对于答案没有影响，可以进行排序，肯定更方便计算对吧。 此时考虑选取数列，假设已经选取了一个数，怎样选取下一个数呢？在排序后的数列中，不难想到，选这个数的左边一个或">
+<meta property="og:locale">
+<meta property="article:published_time" content="2026-07-25T09:32:49.907Z">
+<meta property="article:modified_time" content="2026-07-25T09:43:03.680Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Welcom Here!" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Welcom Here!</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-洛谷P13416题解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/25/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/" class="article-date">
+  <time class="dt-published" datetime="2026-07-25T09:32:49.907Z" itemprop="datePublished">2026-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      洛谷P13416题解
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>这是本蒟蒻的第一篇题解，支持一下吧 qwq。</p>
+<p>首先，理解题意，已经写得很清楚了，简单来说就是从一个数列中，去掉几个数，得到一个新数列，并使数列中的极差 $M$ 加上两个最接近的数的差 $m$（另一种形式的极差）。</p>
+<p>考虑做法，发现数列的顺序对于答案没有影响，可以进行排序，<del>肯定更方便计算对吧</del>。</p>
+<p>此时考虑选取数列，假设已经选取了一个数，怎样选取下一个数呢？在排序后的数列中，不难想到，选这个数的左边一个或右边一个数比选更远的数要更好一些，越远答案将会越大。</p>
+<p>继续扩展，此时选取的数列在原序列中是一个区间，对于选下一个数也会发现，选择区间左右两边的数比其他的数更优：对于 $m$，无论再怎样选择，也只会变小（要么是之前计算得到的，要么是选择后更新的，选最小的），而对于 $M$，就是最右边与最左边数的差，此时只要让左右两边距离更小就会更优。</p>
+<p>（<del>怎么越看越像区间地皮，不过时间是$O(n^2)$，过不了。</del>）</p>
+<p>这样，选取的数列就是排序后的数列的一个固定长度的区间了（因为 $n,k$ 是给定的），不过位置还不确定，直接遍历能做到。</p>
+<p>计算答案：排序后，区间的极差 $M$ 即为区间内最右端的数与最左端的差，那如何计算 $m$ 呢，先求排序后的数列每一位与前一位的差，就是差分，容易发现 $m$ 就是这段区间每一位差分的最小值，这段过程可以预处理。</p>
+<p>实现代码：大致过程就是给原数组排序、预处理再进行遍历，找到差分的最小值 $m$，区间内最值，这一点可以使用单调队列实现，时间复杂度主要在排序 $O(n \log n)$，单调队列是 $O(n)$ 的，注意实现的细节，总的来说不难写。</p>
+<p>这是 bro 的代码。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n,k,ans=<span class="number">2147483647</span>;</span><br><span class="line"><span class="type">int</span> a[<span class="number">1123456</span>], b[<span class="number">1123456</span>], q[<span class="number">1123456</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(a<span class="number">+1</span>,a+n<span class="number">+1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        b[i]=a[i]-a[i<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> l=<span class="number">0</span>, r=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">2</span>;i&lt;=n;i++)&#123; <span class="comment">//单调队列实现过程</span></span><br><span class="line">        <span class="keyword">while</span>(l&lt;r &amp;&amp; b[i]&lt;=b[q[r<span class="number">-1</span>]]) r--;</span><br><span class="line">        q[r++] = i;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r &amp;&amp; i-q[l]<span class="number">+1</span>&gt;n-k) l++;</span><br><span class="line">        <span class="keyword">if</span>(n-i&lt;=k)</span><br><span class="line">            ans=<span class="built_in">min</span>(ans,<span class="comment">/*M*/</span>a[i]-a[i-(n-k)<span class="number">+1</span>] + <span class="comment">/*m*/</span>b[q[l]]);</span><br><span class="line">        <span class="comment">//要在长度符合题意时更新答案</span></span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/07/25/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/" data-id="cuid4SzW4n51NyOe7s03SQaB5" data-title="洛谷P13416题解" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/07/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/07/25/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/">洛谷P13416题解</a>
+          </li>
+        
+          <li>
+            <a href="/2026/07/25/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
