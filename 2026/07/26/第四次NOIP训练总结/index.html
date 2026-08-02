@@ -20,12 +20,12 @@
   <title>第四次NOIP训练总结 - Welcom Here!</title>
 
   
-    <meta name="description" content="比赛链接 赛前状态：一般，能签好到就不错了。 赛时：WTF，怎么签到失败啊，天塌了！为什么为什么为什么？？？？？又爆炸了，我怎么弱完了？还剩两个小时，果断放弃（） 做题记录： A 看起来好像是简单的序列查询题，但是不知道怎么做。 几个操作： 1. 在序列最前方插入一个数 2. 在序列中每一个数前插入给定的一个数 3. 查询某一位置的值 序列初始有一个元素1 数据范围: Q ≤ 1">
+    <meta name="description" content="比赛链接 赛前状态：一般，能签好到就不错了。 赛时：WTF，怎么签到失败啊，天塌了！为什么为什么为什么？？？？？又爆炸了，我怎么弱完了？还剩两个小时，果断放弃（）  做题记录：  A 看起来好像是简单的序列查询题，但是不知道怎么做。 几个操作：  在序列最前方插入一个数 在序列中每一个数前插入给定的一个数 查询某一位置的值  序列初始有一个元素1 数据范围: Q≤106Q \le 10 ^ 6Q≤">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第四次NOIP训练总结">
 <meta property="og:url" content="http://example.com/2026/07/26/%E7%AC%AC%E5%9B%9B%E6%AC%A1NOIP%E8%AE%AD%E7%BB%83%E6%80%BB%E7%BB%93/">
 <meta property="og:site_name" content="Welcom Here!">
-<meta property="og:description" content="比赛链接 赛前状态：一般，能签好到就不错了。 赛时：WTF，怎么签到失败啊，天塌了！为什么为什么为什么？？？？？又爆炸了，我怎么弱完了？还剩两个小时，果断放弃（） 做题记录： A 看起来好像是简单的序列查询题，但是不知道怎么做。 几个操作： 1. 在序列最前方插入一个数 2. 在序列中每一个数前插入给定的一个数 3. 查询某一位置的值 序列初始有一个元素1 数据范围: Q ≤ 1">
+<meta property="og:description" content="比赛链接 赛前状态：一般，能签好到就不错了。 赛时：WTF，怎么签到失败啊，天塌了！为什么为什么为什么？？？？？又爆炸了，我怎么弱完了？还剩两个小时，果断放弃（）  做题记录：  A 看起来好像是简单的序列查询题，但是不知道怎么做。 几个操作：  在序列最前方插入一个数 在序列中每一个数前插入给定的一个数 查询某一位置的值  序列初始有一个元素1 数据范围: Q≤106Q \le 10 ^ 6Q≤">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-07-25T16:00:00.000Z">
 <meta property="article:modified_time" content="2026-07-26T12:01:08.603Z">
@@ -94,65 +94,58 @@
     
   </div>
   </div><article class="md-text content"><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/contest/343204">比赛链接</a></p>
-<p>赛前状态：一般，<del>能签好到就不错了</del>。</p>
+<p>赛前状态：一般，<s>能签好到就不错了</s>。</p>
 <p>赛时：WTF，怎么签到失败啊，天塌了！为什么为什么为什么？？？？？又爆炸了，我怎么弱完了？还剩两个小时，果断放弃（）</p>
-<h3 id="做题记录">做题记录：</h3>
-<h4 id="a">A</h4>
+<h3 id="做题记录"><a class="markdownIt-Anchor" href="#做题记录"></a> 做题记录：</h3>
+<h4 id="a"><a class="markdownIt-Anchor" href="#a"></a> A</h4>
 <p>看起来好像是简单的序列查询题，但是不知道怎么做。</p>
-<p>几个操作： 1. 在序列最前方插入一个数 2.
-在序列中每一个数前插入给定的一个数 3. 查询某一位置的值</p>
+<p>几个操作：</p>
+<ol>
+<li>在序列最前方插入一个数</li>
+<li>在序列中每一个数前插入给定的一个数</li>
+<li>查询某一位置的值</li>
+</ol>
 <p>序列初始有一个元素1</p>
-<p>数据范围: <span
-class="math inline"><em>Q</em> ≤ 10<sup>6</sup></span></p>
-<p>赛时只写出了 <span
-class="math inline"><em>O</em>(<em>Q</em><sup>2</sup>)</span>
-的做法，逆推每个元素的来源，但是差一点就能拿满分了，<del>可以读入题目数据乱搞</del>，只要将操作一绑起来，这样的块数最大量级是操作二的数量级，可以实现
-<span class="math inline"><em>O</em>(<em>n</em>log <em>v</em>)</span>
-的复杂度。赛时想到了这点，但是嫌麻烦怕写假，可惜。</p>
-<h4 id="b">B</h4>
-<p>比较神秘的数论题，随便瞎写了一点然后 hack
-了自己的代码，然后炸了呜呜呜。</p>
+<p>数据范围: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup></mrow><annotation encoding="application/x-tex">Q \le 10 ^ 6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">Q</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></p>
+<p>赛时只写出了 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>Q</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(Q ^ 2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> 的做法，逆推每个元素的来源，但是差一点就能拿满分了，<s>可以读入题目数据乱搞</s>，只要将操作一绑起来，这样的块数最大量级是操作二的数量级，可以实现 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>v</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n \log v)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span><span class="mclose">)</span></span></span></span> 的复杂度。赛时想到了这点，但是嫌麻烦怕写假，可惜。</p>
+<h4 id="b"><a class="markdownIt-Anchor" href="#b"></a> B</h4>
+<p>比较神秘的数论题，随便瞎写了一点然后 hack 了自己的代码，然后炸了呜呜呜。</p>
 <p>看了题解，要建图？？？这点真没想到。</p>
-<h4 id="c">C</h4>
+<h4 id="c"><a class="markdownIt-Anchor" href="#c"></a> C</h4>
 <p>什么玩意曼哈顿距离，感觉是很神秘的算法，真的不会</p>
-<h4 id="d">D</h4>
+<h4 id="d"><a class="markdownIt-Anchor" href="#d"></a> D</h4>
 <p>题目数据怎么这么大，不会（</p>
-<h3 id="感想">感想</h3>
+<h3 id="感想"><a class="markdownIt-Anchor" href="#感想"></a> 感想</h3>
 <p>这次训练只能说又拉了，心态爆炸，水平爆炸，等上完课整理做法吧（。</p>
-<h3 id="结果80-40-0-0">结果：80 + 40 + 0 + 0</h3>
+<h3 id="结果80-40-0-0"><a class="markdownIt-Anchor" href="#结果80-40-0-0"></a> 结果：80 + 40 + 0 + 0</h3>
 <p>为什么瞎打的分数和之前认真写的一样？</p>
 </article>
 <div class="article-footer">
     <section id="license">
       <div class="header"><span>许可协议</span></div>
-      <div class="body"><p>本文采用 <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享
-4.0 国际</a> 许可协议，转载请注明出处。</p>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
 </div>
     </section>
     
 
 </div>
 
-<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2026/07/26/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">概率与期望</a></div></section></div>
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2026/07/26/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/">概率与期望</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2026/01/11/%E6%B4%9B%E8%B0%B7P13416%E9%A2%98%E8%A7%A3/">洛谷P13416题解</a></div></section></div>
 
 
 
 
 
 
-<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">CwO_By</a> 使用 <a
-target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar
-1.33.1</a> 主题创建。 本博客所有文章除特别声明外，均采用 <a
-target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA
-4.0</a> 许可协议，转载请注明出处。</p>
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">CwO_By</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br />
+本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
 </div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
 <div class="widgets">
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="toc-text">做题记录：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a"><span class="toc-text">A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b"><span class="toc-text">B</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c"><span class="toc-text">C</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d"><span class="toc-text">D</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E6%83%B3"><span class="toc-text">感想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C80-40-0-0"><span class="toc-text">结果：80 + 40 + 0 + 0</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95"><span class="toc-text"> 做题记录：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#a"><span class="toc-text"> A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#b"><span class="toc-text"> B</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#c"><span class="toc-text"> C</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#d"><span class="toc-text"> D</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%84%9F%E6%83%B3"><span class="toc-text"> 感想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C80-40-0-0"><span class="toc-text"> 结果：80 + 40 + 0 + 0</span></a></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
 </div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
